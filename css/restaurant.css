@@ -20,7 +20,7 @@ body {
 
 #logo-img {
   background: url('../images/logo.png') no-repeat;
-  width: 270px;
+  width: 150px;
   height: 58px;
   margin: 10px 15px 10px 0;
 }
@@ -125,7 +125,7 @@ a[ui-sref="admin.auth"] {
 @media (min-width: 992px) and (max-width: 1199px) {
   /* Header */
   #logo-img {
-    background: url('../images/logo_medium.png') no-repeat;
+    background: url('../images/logo-medium.png') no-repeat;
     width: 100px;
     height: 100px;
     margin: 5px 5px 5px 0;

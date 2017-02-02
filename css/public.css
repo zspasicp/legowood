@@ -1,7 +1,6 @@
 /* HOME PAGE */
 .container .jumbotron {
-  box-shadow: 0 0 50px #3F0C1F;
-  border: 2px solid #3F0C1F;
+  background: rgba(0, 0, 0, 0.0);
 }
 
 #menu-tile, #specials-tile, #map-tile {
@@ -117,8 +116,7 @@ h3.menu-item-title {
 /********** Large devices only **********/
 @media (min-width: 1200px) {
   .container .jumbotron {
-    background: url('../images/firma.jpg') no-repeat;
-    height: 675px;
+    height: 550px;
   }
 }
 
@@ -126,7 +124,6 @@ h3.menu-item-title {
 @media (min-width: 992px) and (max-width: 1199px) {
   /* Home Page */
   .container .jumbotron {
-    background: url('../images/firma.jpg') no-repeat;
     height: 558px;
   }
   /* End Home Page */
@@ -136,7 +133,6 @@ h3.menu-item-title {
 @media (min-width: 768px) and (max-width: 991px) {
   /* Home Page */
   .container .jumbotron {
-    background: url('../images/firma.jpg') no-repeat;
     height: 432px;
   }
   /* End Home Page */
