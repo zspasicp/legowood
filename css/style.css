@@ -1,7 +1,7 @@
 body{
 font-family: Arial, helvetica, sans-serif;
 font-size:15px;
-background-image: url("images/pattern.jpg");
+background-image: url("../images/pattern.jpg");
 }
 
 #wrapper{
@@ -14,7 +14,7 @@ margin:auto;
   height: 50px;
   text-align: center;
   margin: 0 auto;
-  background: transparent url(images/menu_pattern.jpg) repeat;
+  background: transparent url(../images/menu_pattern.jpg) repeat;
   border-radius: 15px 15px 15px 15px;
   -moz-border-radius: 15px 15px 15px 15px;
   -webkit-border: 15px 15px 15px 15px;
@@ -200,7 +200,7 @@ color: #5E2612;
   height: auto;
   width: 960px;
   border-radius: 15px 15px 15px 15px;
-  background: url(images/menu_pattern.jpg);
+  background: url(../images/menu_pattern.jpg);
 }
 #footer p {
 	font-family: "Varela";

@@ -1,0 +1,51 @@
+<div style="padding-top:30px">
+  <div id="myCarousel" class="carousel slide" data-ride="carousel" interval="3000">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li ng-repeat="image in $ctrl.images" data-target="#myCarousel" data-slide-to="{{$index}}"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+      <div ng-repeat="image in $ctrl.images" class="item" ng-class="{'active':$index === 0}">
+        <img src="{{image}}" alt="Image can not be loaded!">
+      </div>
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+
+    <!-- End Slider -->
+    <!-- <div id="content">
+        <div id="content1">
+            <a href="o_nama.html">
+                <h2>O nama</h2> </a>
+            <a href="o_nama.html"> <img src="images/o_nama.jpg" width="264" height="154" alt="" /> </a>
+            <p>Lorem Ipsum is simply dummy text of the printing and and typesetting industry. Lorem Ipsum is simply dummy text of the printing and and typesetting industry. </p>
+        </div> -->
+        <!--end content1-->
+        <!-- <div id="content2">
+            <a href="galerija.html">
+                <h2>Galerija</h2> </a>
+            <a href="galerija.html"> <img src="images/firma1.jpg" width="264" height="154" alt="" /> </a>
+            <p>Lorem Ipsum is simply dummy text of the printing and and typesetting industry. Lorem Ipsum is simply dummy text of the printing and and typesetting industry.</p>
+        </div> -->
+        <!--end content2-->
+        <!-- <div id="content3">
+            <a href="https://goo.gl/maps/rYs3LNJpsD12">
+                <h2>Lokacija</h2> </a>
+            <a href="https://goo.gl/maps/rYs3LNJpsD12"> <img src="images/lokacija.jpg" width="264" height="154" alt="" /> </a>
+            <p>Lorem Ipsum is simply dummy text of the printing and and typesetting industry. Lorem Ipsum is simply dummy text of the printing and and typesetting industry.</p>
+        </div> -->
+        <!--end content3-->
+    <!-- </div> -->
+</div>
+<!--end content-->

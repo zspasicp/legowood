@@ -1,105 +1,65 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
+
 <head>
-<html>
-<title>LegoWood</title>
-<meta charset="UTF-8" />
-<link href="style.css" rel="stylesheet" type="text/css" />
-<link href='http://fonts.googleapis.com/css?family=Varela&subset=latin,latin-ext' rel='stylesheet' type='text/css' />
+    <html>
+    <title>LegoWood</title>
+    <meta charset="UTF-8" />
 </head>
-<body>
-<div id="wrapper">
-    <header>
-      <div id="main">
-  <div id="header">
-  <div id="banner">
-    <div id="welcome_slogan">
-    <a href="index.html">  <img src="images/logo3.png" height="100px" width="190px"alt=""> </a>
-    </div><!--close welcome_slogan-->
-  </div><!--close banner-->
-  </div><!--close header-->
-      <div id="menubar">
-          <ul id="menu">
-            <li class="current"><a href="index.html">Home</a></li>
-            <li><a href="o_nama.html">O nama</a></li>
-            <li><a href="galerija.html">Galerija</a></li>
-            <li><a href="kontakt.html">Kontakt</a></li>
-          </ul>
-        </div><!--close menubar-->
 
-    </header> <!-- End Header -->
-    <div class="slideshow-container">
-      <div class="mySlides fade">
-      <a href="galerija.html">  <img src="images/galerija2.jpg" style="width:100%"> </a>
-      </div>
-      <div class="mySlides fade">
-      <a href="galerija.html">  <img src="images/galerija3.jpg" style="width:100%"> </a>
-      </div>
-      <div class="mySlides fade">
-      <a href="galerija.html">  <img src="images/galerija4.jpg" style="width:100%"> </a>
-      </div>
-      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-      <a class="next" onclick="plusSlides(1)">&#10095;</a>
-    </div>
-    <br>
-  <script>
-  var slideIndex = 1;
-showSlides(slideIndex);
-function plusSlides(n) {
-showSlides(slideIndex += n);
-}
-function currentSlide(n) {
-showSlides(slideIndex = n);
-}
-function showSlides(n) {
-var i;
-var slides = document.getElementsByClassName("mySlides");
-var dots = document.getElementsByClassName("dot");
-if (n > slides.length) {slideIndex = 1}
-if (n < 1) {slideIndex = slides.length}
-for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-}
-for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
-}
-slides[slideIndex-1].style.display = "block";
-dots[slideIndex-1].className += " active";
-}
-</script> <!-- End Slider -->
-<div id="content">
-   	  <div id="content1">
-       <a href="o_nama.html">	<h2>O nama</h2> </a>
-       <a href="o_nama.html">	  <img src="images/o_nama.jpg" width="264" height="154" alt="" /> </a>
-        <p>Lorem Ipsum is simply dummy text of the printing and and typesetting industry. Lorem Ipsum is simply dummy text of the printing and and typesetting industry. </p>
-      </div><!--end content1-->
-        <div id="content2">
-       	<a href="galerija.html">	<h2>Galerija</h2> </a>
-        <a href="galerija.html">	<img src="images/firma1.jpg" width="264" height="154" alt="" /> </a>
-        	<p>Lorem Ipsum is simply dummy text of the printing and and typesetting industry. Lorem Ipsum is simply dummy text of the printing and and typesetting industry.</p>
-        </div><!--end content2-->
-        <div id="content3">
-       	<a href="https://goo.gl/maps/rYs3LNJpsD12">	<h2>Lokacija</h2> </a>
-        <a href="https://goo.gl/maps/rYs3LNJpsD12">	<img src="images/lokacija.jpg" width="264" height="154" alt="" /> </a>
-        	<p>Lorem Ipsum is simply dummy text of the printing and and typesetting industry. Lorem Ipsum is simply dummy text of the printing and and typesetting industry.</p>
-        </div><!--end content3-->
-  </div><!--end content-->
+<body ng-app="LegowoodModule">
+    <div id="wrapper" ng-controller="MainStateController as $ctrl">
+        <header>
+            <div id="main">
+                <div id="header">
+                    <div id="banner">
+                        <div id="welcome_slogan">
+                            <a ng-click="$ctrl.showMainPage()"> <img src="images/logo3.png" height="100px" width="190px" alt=""> </a>
+                        </div>
+                        <!--close welcome_slogan-->
+                    </div>
+                    <!--close banner-->
+                </div>
+                <!--close header-->
+                <div id="menubar">
+                    <ul id="menu">
+                        <li ng-class="{current: $ctrl.mainVisible}"><a ng-click="$ctrl.showMainPage()">Home</a></li>
+                        <li ng-class="{current: $ctrl.aboutVisible}"><a ng-click="$ctrl.showAboutPage()">O nama</a></li>
+                        <li ng-class="{current: $ctrl.galeryVisible}"><a ng-click="$ctrl.showGaleryPage()">Galerija</a></li>
+                        <li ng-class="{current: $ctrl.contactVisible}"><a ng-click="$ctrl.showContactPage()">Kontakt</a></li>
+                    </ul>
+                </div>
+                <!--close menubar-->
+            </div>
+        </header>
+        <!-- End Header -->
 
-<div id="push"></div>
+        <!-- page content -->
+        <main-page ng-if="$ctrl.mainVisible"></main-page>
+        <about-page ng-if="$ctrl.aboutVisible"></about-page>
+        <div id="push"></div>
+        <ng-footer></ng-footer>
+        <!-- end of page content -->
 
-<div id="footer">
-    	<div id="adress">
-        <p>Adresa:<br>
-         Lužani bb<br>
-         Gradiška, 78400<br></p>
-       </div>
-      <div id="contact">
-        <p>Kontakt:<br>
-          Tel: +387 51 11 22 33<br>
-          Fax: +387 51 11 22 44<br>
-			<a href="mailto:legowood@mail,com"> <p>e-mail: legowood@mail.com </p> </a>
-    </div>
-    </div><!--end footer-->
+        <!-- Styles imports -->
+        <link href="css/style.css" rel="stylesheet" type="text/css" />
+        <link href="css/fonts.css" rel="stylesheet" type="text/css" />
+        <link href="css/lightbox.css" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
-</div>
+        <!-- TODO: provjeriti zasto import bootsrap-a ne radi -->
+        <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <!--  -->
+
+        <!-- libraries import -->
+        <script src="lib/jquery.min.js"></script>
+        <script src="lib/bootstrap.min.js"></script>
+        <script src="lib/angular.min.js"></script>
+        <script src="lib/angular-route.min.js"></script>
+        <script src="src/app.js"></script>
+        <script src="src/about/about.component.js"></script>
+        <script src="src/footer/footer.component.js"></script>
+        <script src="src/main/main.component.js"></script>
+        <!--  -->
 </body>
+
 </html>
