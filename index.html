@@ -1,131 +1,105 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Lego Wood</title>
-    <link rel="icon" href="images/restaurant-logo-favicon.png" type="image/png" sizes="16x16">
-    <link href='https://fonts.googleapis.com/css?family=Oxygen:400,300,700' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Lora' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/restaurant.css">
-    <link rel="stylesheet" href="css/common.css">
-  </head>
-  <body ng-app="restaurant" ng-strict-di>
-
-    <!-- Fixed position loading indicator -->
-    <loading class="loading-indicator"></loading>
-
+﻿<!DOCTYPE html>
+<head>
+<html>
+<title>LegoWood</title>
+<meta charset="UTF-8" />
+<link href="style.css" rel="stylesheet" type="text/css" />
+<link href='http://fonts.googleapis.com/css?family=Varela&subset=latin,latin-ext' rel='stylesheet' type='text/css' />
+</head>
+<body>
+<div id="wrapper">
     <header>
-      <nav id="header-nav" class="navbar navbar-default">
-        <div class="container">
-          <div class="navbar-header">
-            <a href="index.html" class="pull-left visible-md visible-lg">
-              <div id="logo-img" alt="Logo image"></div>
-            </a>
-			<div class="navbar-brand">
-              <a href="index.html"><h1>Lego Wood</h1></a>
-			  <p>Gradiška
-              </p>
-		</div>
-            <button id="navbarToggle" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapsable-nav" aria-expanded="false">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-          </div>
+      <div id="main">
+  <div id="header">
+  <div id="banner">
+    <div id="welcome_slogan">
+    <a href="index.html">  <img src="images/logo3.png" height="100px" width="190px"alt=""> </a>
+    </div><!--close welcome_slogan-->
+  </div><!--close banner-->
+  </div><!--close header-->
+      <div id="menubar">
+          <ul id="menu">
+            <li class="current"><a href="index.html">Home</a></li>
+            <li><a href="o_nama.html">O nama</a></li>
+            <li><a href="galerija.html">Galerija</a></li>
+            <li><a href="kontakt.html">Kontakt</a></li>
+          </ul>
+        </div><!--close menubar-->
 
-          <div id="collapsable-nav" class="collapse navbar-collapse">
-            <ul id="nav-list" class="nav navbar-nav navbar-right">
-              <li id="navHomeButton" class="visible-xs">
-                <a href="index.html">
-                  <span class="glyphicon glyphicon-home"></span> Početna</a>
-              </li>
-              <li id="navMenuButton" ui-sref-active="active">
-                <a ui-sref="public.menu">
-                  <span class="glyphicon glyphicon-picture"></span><br class="hidden-xs"> Galerija</a>
-              </li>
-              <li>
-                <a href="#">
-                  <span class="glyphicon glyphicon-info-sign"></span><br class="hidden-xs"> O nama</a>
-              </li>
-            </ul><!-- #nav-list -->
-          </div><!-- .collapse .navbar-collapse -->
-        </div><!-- .container -->
-      </nav><!-- #header-nav -->
-    </header>
-
-    <ui-view>
-      <div class="text-center initial-loading">
-        <h2>Loading Site...</h2>
+    </header> <!-- End Header -->
+    <div class="slideshow-container">
+      <div class="mySlides fade">
+      <a href="galerija.html">  <img src="images/galerija2.jpg" style="width:100%"> </a>
       </div>
-    </ui-view>
-
-    <footer class="panel-footer">
-      <div class="container">
-        <div class="row">
-          <section id="address" class="col-sm-4">
-            <span>Addresa:</span><br>
-            Lužani bb<br>
-            Gradiška, 78400<br>  			
-            <hr class="visible-xs">
-          </section>
-		  <section id="address" class="col-sm-4">
-            <span>Kontakt:</span><br>
-            Tel: +387 51 11 22 33<br>
-            Fax: +387 51 11 22 44<br> 	
-			e-mail: legowood@mail.com<br> 				
-            <hr class="visible-xs">
-          </section>
-        </div>
-        <div class="text-center">
-          &copy; Copyright Lego Wood |
-          <a ui-sref="admin.auth">Admin</a></div>
+      <div class="mySlides fade">
+      <a href="galerija.html">  <img src="images/galerija3.jpg" style="width:100%"> </a>
       </div>
-    </footer>
+      <div class="mySlides fade">
+      <a href="galerija.html">  <img src="images/galerija4.jpg" style="width:100%"> </a>
+      </div>
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+    <br>
+  <script>
+  var slideIndex = 1;
+showSlides(slideIndex);
+function plusSlides(n) {
+showSlides(slideIndex += n);
+}
+function currentSlide(n) {
+showSlides(slideIndex = n);
+}
+function showSlides(n) {
+var i;
+var slides = document.getElementsByClassName("mySlides");
+var dots = document.getElementsByClassName("dot");
+if (n > slides.length) {slideIndex = 1}
+if (n < 1) {slideIndex = slides.length}
+for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+}
+for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+}
+slides[slideIndex-1].style.display = "block";
+dots[slideIndex-1].className += " active";
+}
+</script> <!-- End Slider -->
+<div id="content">
+   	  <div id="content1">
+       <a href="o_nama.html">	<h2>O nama</h2> </a>
+       <a href="o_nama.html">	  <img src="images/o_nama.jpg" width="264" height="154" alt="" /> </a>
+        <p>Lorem Ipsum is simply dummy text of the printing and and typesetting industry. Lorem Ipsum is simply dummy text of the printing and and typesetting industry. </p>
+      </div><!--end content1-->
+        <div id="content2">
+       	<a href="galerija.html">	<h2>Galerija</h2> </a>
+        <a href="galerija.html">	<img src="images/firma1.jpg" width="264" height="154" alt="" /> </a>
+        	<p>Lorem Ipsum is simply dummy text of the printing and and typesetting industry. Lorem Ipsum is simply dummy text of the printing and and typesetting industry.</p>
+        </div><!--end content2-->
+        <div id="content3">
+       	<a href="https://goo.gl/maps/rYs3LNJpsD12">	<h2>Lokacija</h2> </a>
+        <a href="https://goo.gl/maps/rYs3LNJpsD12">	<img src="images/lokacija.jpg" width="264" height="154" alt="" /> </a>
+        	<p>Lorem Ipsum is simply dummy text of the printing and and typesetting industry. Lorem Ipsum is simply dummy text of the printing and and typesetting industry.</p>
+        </div><!--end content3-->
+  </div><!--end content-->
 
-    <!-- Libs -->
-    <script src="lib/jquery-2.1.4.min.js"></script>
-    <script src="lib/bootstrap.min.js"></script>
-    <script src="lib/angular.min.js"></script>
-    <script src="lib/angular-ui-router.min.js"></script>
-    <script src="lib/ng-file-upload/ng-file-upload-shim.min.js"></script>
-    <script src="lib/ng-file-upload/ng-file-upload.min.js"></script>
+<div id="push"></div>
 
-    <!-- Main Restaurant Module -->
-    <script src="src/restaurant.module.js"></script>
+<div id="footer">
+    	<div id="adress">
+        <p>Adresa:<br>
+         Lužani bb<br>
+         Gradiška, 78400<br></p>
+       </div>
+      <div id="contact">
+        <p>Kontakt:<br>
+          Tel: +387 51 11 22 33<br>
+          Fax: +387 51 11 22 44<br>
+			<a href="mailto:legowood@mail,com"> <p>e-mail: legowood@mail.com </p> </a>
+    </div>
+    </div><!--end footer-->
 
-    <!-- Common Module -->
-    <script src="src/common/common.module.js"></script>
-    <script src="src/common/loading/loading.component.js"></script>
-    <script src="src/common/loading/loading.interceptor.js"></script>
-    <script src="src/common/menu.service.js"></script>
-
-    <!-- Public Module -->
-    <script src="src/public/public.module.js"></script>
-    <script src="src/public/public.routes.js"></script>
-    <script src="src/public/menu/menu.controller.js"></script>
-    <script src="src/public/menu-category/menu-category.component.js"></script>
-    <script src="src/public/menu-items/menu-items.controller.js"></script>
-    <script src="src/public/menu-item/menu-item.component.js"></script>
-
-    <!-- ADMIN SITE -->
-    <script src="src/admin/admin.module.js"></script>
-    <script src="src/admin/admin.routes.js"></script>
-    <script src="src/admin/admin-auth/admin-auth.controller.js"></script>
-    <script src="src/admin/services/login.service.js"></script>
-    <script src="src/admin/services/current-user.service.js"></script>
-    <script src="src/admin/services/authredirector.service.js"></script>
-    <script src="src/admin/auth.interceptor.js"></script>
-    <script src="src/admin/login/login.controller.js"></script>
-    <script src="src/admin/category/category-list.component.js"></script>
-    <script src="src/admin/category/category-items.controller.js"></script>
-    <script src="src/admin/menu-item/menu-item-edit.controller.js"></script>
-    <script src="src/admin/menu-item/menu-item-admin.component.js"></script>
-
-
-  </body>
-
+</div>
+</body>
 </html>
