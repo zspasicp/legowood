@@ -8,17 +8,17 @@
 
 <body ng-app="LegowoodModule">
     <div id="wrapper" ng-controller="MainStateController as $ctrl">
-        <header>
-            <div id="main">
-                <div id="header">
+        <header  style="padding-top:10px">
+            <div id="main" >
+                <!-- <div id="header">
                     <div id="banner">
                         <div id="welcome_slogan">
                             <a ng-click="$ctrl.showMainPage()"> <img src="images/logo3.png" height="100px" width="190px" alt=""> </a>
-                        </div>
+                        </div> -->
                         <!--close welcome_slogan-->
-                    </div>
+                    <!-- </div> -->
                     <!--close banner-->
-                </div>
+                <!-- </div> -->
                 <!--close header-->
                 <div id="menubar">
                     <ul id="menu">
@@ -31,11 +31,14 @@
                 <!--close menubar-->
             </div>
         </header>
+
         <!-- End Header -->
 
         <!-- page content -->
         <main-page ng-if="$ctrl.mainVisible"></main-page>
         <about-page ng-if="$ctrl.aboutVisible"></about-page>
+        <gallery-page ng-if="$ctrl.galeryVisible"></gallery-page>
+        <contact-page ng-if="$ctrl.contactVisible"></contact-page>
         <div id="push"></div>
         <ng-footer></ng-footer>
         <!-- end of page content -->
@@ -57,8 +60,11 @@
         <script src="lib/angular-route.min.js"></script>
         <script src="src/app.js"></script>
         <script src="src/about/about.component.js"></script>
+        <script src="src/gallery/gallery.component.js"></script>
+        <script src="src/contact/contact.component.js"></script>
         <script src="src/footer/footer.component.js"></script>
         <script src="src/main/main.component.js"></script>
+      </div>
         <!--  -->
 </body>
 

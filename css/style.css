@@ -44,6 +44,7 @@ ul#menu li a
   -moz-border-radius: 7px 7px 7px 7px;
   -webkit-border: 7px 7px 7px 7px;
   text-align: center;
+  vertical-align: middle;
   color: #FFF;
   text-decoration: none;}
 
